@@ -2,56 +2,37 @@
 
 # 🚀 QuickURL Frontend
 
-**A secure, scalable URL shortening platform built with Spring Boot**
+**A modern React application for shortening URLs, managing links, and viewing click analytics**
 
-Provides REST APIs for user authentication, URL shortening, redirection, and click analytics.
-
-[![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-brightgreen?logo=springboot)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql)](https://www.postgresql.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-Styling-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Live Demo](#-live-api) · [Features](#-features) · [API Reference](#-api-endpoints) · [Getting Started](#-running-locally)
-
-<br>
-
-<img width="850" alt="QuickURL Image" src="https://raw.githubusercontent.com/Gauravsharma26/QuickURL-Backend/main/Screenshot%202026-07-04%20173724.png" />
+[Live App](#-live-application) · [Features](#-features) · [Screens](#-screens) · [Getting Started](#-running-locally)
 
 </div>
 
 ---
 
-## 🖼️ Images
+## 🌐 Live Application
 
-<div align="center">
+🔗 **[quick-url-frontend-liard.vercel.app](https://quick-url-frontend-liard.vercel.app)**
 
-<img width="850" alt="QuickURL Dashboard Image" src="https://raw.githubusercontent.com/Gauravsharma26/QuickURL-Backend/main/Screenshot%202026-07-04%20174442.png" />
-
-</div>
-
----
-
-## 🌐 Live API
-
-> **⚠️ Note:** The backend is hosted on Render's free tier. The first request after a period of inactivity may take **30–60 seconds** while the server spins back up — please be patient on cold starts.
-
-
-Base URL: https://quick-url-frontend-liard.vercel.app
-
+> **⚠️ Note:** Since the backend is deployed on Render's free tier, the first request may take a few seconds while the server spins up from inactivity.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **JWT Authentication** — stateless, secure session handling
-- 🛡️ **Spring Security** — protected routes and role-based access
-- 👤 **User Registration & Login**
-- 🔗 **URL Shortening** — generate compact, shareable short links
-- ↪️ **URL Redirection** — fast lookup and redirect to original URL
-- 📊 **Click Tracking & Daily Analytics**
-- 🗄️ **PostgreSQL Database** integration via Spring Data JPA
-- 🌍 **RESTful APIs** for easy frontend/client integration
-- 🔒 **Password Encryption** using BCrypt
+- 👤 **User Registration** — quick and secure sign-up
+- 🔐 **User Login** — authenticated access to the dashboard
+- 📊 **Dashboard** — a central hub to manage all your links
+- 🔗 **Create Short URLs** — turn long links into compact, shareable ones
+- 📋 **Copy Short URLs** — one-click copy to clipboard
+- 📈 **Click Analytics** — track how your links are performing
+- 📉 **Interactive Graphs** — visualize click trends over time
+- 📱 **Responsive Design** — works seamlessly across devices
 
 ---
 
@@ -59,12 +40,15 @@ Base URL: https://quick-url-frontend-liard.vercel.app
 
 | Category | Technology |
 |---|---|
-| Language | Java 17 |
-| Framework | Spring Boot 3 |
-| Security | Spring Security, JWT |
-| Persistence | Spring Data JPA, Hibernate |
-| Database | PostgreSQL |
-| Build Tool | Maven |
+| Library | React |
+| Build Tool | Vite |
+| Styling | Tailwind CSS |
+| Routing | React Router |
+| HTTP Client | Axios |
+| Data Fetching | React Query |
+| Date Handling | Day.js |
+| Icons | React Icons |
+| Charts | Recharts |
 
 ---
 
@@ -72,86 +56,65 @@ Base URL: https://quick-url-frontend-liard.vercel.app
 
 ```
 src
-├── controllers   # REST API endpoints
-├── service       # Business logic
-├── repository    # Data access layer (JPA repositories)
-├── model         # Entity classes
-├── dto           # Data Transfer Objects
-├── security      # JWT & Spring Security configuration
-├── config        # Application-level configuration
-└── resources     # application.properties, static assets, etc.
+├── api          # API request handlers (Axios instances, endpoints)
+├── assets       # Images, icons, and static assets
+├── components   # Reusable UI components
+├── contextApi   # React Context providers for global state
+├── pages        # Page-level components (Home, Login, Dashboard, etc.)
+├── routes       # Application routing configuration
+└── utils        # Helper functions and utilities
 ```
 
 ---
 
-## 📡 API Endpoints
+## 🖥️ Screens
 
-### Authentication
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/auth/public/register` | Register a new user |
-| `POST` | `/api/auth/public/login` | Authenticate and receive a JWT |
-
-### URL Management
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/urls/shorten` | Create a short URL |
-| `GET` | `/api/urls/myurls` | Get all URLs created by the authenticated user |
-| `GET` | `/api/urls/analytics/{shortUrl}` | Get click analytics for a short URL |
-
-### Redirection
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/{shortUrl}` | Redirect to the original long URL |
-
----
-
-## 🔒 Security
-
-- ✅ JWT-based authentication
-- ✅ BCrypt password encoding
-- ✅ Stateless session management
-- ✅ Protected APIs via Spring Security filters
-- ✅ CORS configuration for frontend integration
+| Screen | Description |
+|---|---|
+| **Home Page** | Landing page introducing the app |
+| **Register** | New user sign-up |
+| **Login** | Authenticate and access the dashboard |
+| **Dashboard** | Create and manage short URLs |
+| **URL Analytics** | View click stats and interactive graphs for each link |
 
 ---
 
 ## ⚙️ Running Locally
 
 ### Prerequisites
-- Java 17+
-- Maven
-- PostgreSQL
+- Node.js 18+
+- npm
 
 ### Steps
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Gauravsharma26/QuickURL-Backend.git
-   cd QuickURL-Backend
+   git clone https://github.com/Gauravsharma26/QuickURL-Frontend.git
+   cd QuickURL-Frontend
    ```
 
-2. **Configure environment variables**
-
-   Create a `.env` file or set the following environment variables:
-
-   ```properties
-   DB_URL=jdbc:postgresql://localhost:5432/quickurl
-   DB_USERNAME=your_db_username
-   DB_PASSWORD=your_db_password
-   JWT_SECRET=your_jwt_secret_key
-   FRONTEND_URL=http://localhost:3000
-   ```
-
-3. **Run the application**
+2. **Install dependencies**
    ```bash
-   mvn spring-boot:run
+   npm install
    ```
 
-4. The API will be available at `http://localhost:8080` 🎉
+3. **Configure environment variables**
+
+   Create a `.env` file in the project root:
+
+   ```env
+   VITE_BACKEND_URL=http://localhost:8080
+   ```
+
+4. **Run the application**
+   ```bash
+   npm run dev
+   ```
+
+5. The app will be available at:
+   ```
+   http://localhost:5173
+   ```
 
 ---
 
@@ -159,8 +122,16 @@ src
 
 | Component | Platform |
 |---|---|
+| Frontend | [Vercel](https://vercel.com/) |
 | Backend | [Render](https://render.com/) |
-| Database | Render PostgreSQL |
+
+---
+
+## 🔗 Backend Repository
+
+This frontend connects to the QuickURL backend API:
+
+**[github.com/Gauravsharma26/QuickURL-Backend](https://github.com/Gauravsharma26/QuickURL-Backend)**
 
 ---
 
