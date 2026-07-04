@@ -7,7 +7,7 @@ import LandingPage from "./components/LandingPage";
 import AboutPage from "./components/AboutPage";
 import RegisterPage from "./components/RegisterPage";
 import LoginPage from "./components/LoginPage";
-import DashboardLayout from "./components/Dashboard/DashBoardLayout"; 
+import DashboardLayout from "./components/Dashboard/DashboardLayout"; 
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "./components/ErrorPage";
 
